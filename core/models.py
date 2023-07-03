@@ -12,6 +12,7 @@ class Pizza(models.Model):
         ('M', 'Média'),
         ('G', 'Grande'),
     )
+    nome = models.CharField(max_length=100, default='Pizza Sem Nome')
     tipo = models.CharField(max_length=1, choices=TIPOS)
     tamanho = models.CharField(max_length=1, choices=TAMANHOS)
     ingredientes = models.TextField()

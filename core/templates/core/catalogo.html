@@ -9,7 +9,7 @@
 <h1>Catálogo de Pizzas</h1>
 <ul>
     {% for pizza in pizzas %}
-    <li>{{ pizza.tipo }} - {{ pizza.tamanho }} - {{ pizza.ingredientes }} - {{ pizza.preco }}</li>
+    <li> {{ pizza.nome }} - {{ pizza.tipo }} - {{ pizza.tamanho }} - {{ pizza.ingredientes }} - {{ pizza.preco }}</li>
     {% endfor %}
 </ul>
 

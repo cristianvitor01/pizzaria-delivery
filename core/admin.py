@@ -4,7 +4,7 @@ from .models import Pizza, Cliente, EnderecoEntrega, Pedido, Item, Pagamento, Pe
 
 @admin.register(Pizza)
 class PizzaAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tipo', 'tamanho', 'ingredientes', 'preco']
+    list_display = ['id', 'nome', 'tipo', 'tamanho', 'ingredientes', 'preco']
     list_filter = ['tipo', 'tamanho']
 
 
