@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalogo</title>
+</head>
+<body>
+
+<h1>Catálogo de Pizzas</h1>
+<ul>
+    {% for pizza in pizzas %}
+    <li>{{ pizza.tipo }} - {{ pizza.tamanho }} - {{ pizza.ingredientes }} - {{ pizza.preco }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
