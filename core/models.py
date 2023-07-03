@@ -38,7 +38,7 @@ class Pedido(models.Model):
 
 
 class Item(models.Model):
-    pedido = order = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     ingrediente_adicional = models.TextField()
     preco_item = models.DecimalField(max_digits=6, decimal_places=2)
