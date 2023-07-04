@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Pizza
 
@@ -9,5 +9,8 @@ def index(request):
 
 
 def catalogo(request):
-    pizzas = Pizza.objects.all()
-    return render(request, 'core/catalogo.html', {'pizzas': pizzas})
+    pizza = Pizza.objects.all()
+    return render(request, 'core/catalogo.html', {'pizzas': pizza})
+
+
+
