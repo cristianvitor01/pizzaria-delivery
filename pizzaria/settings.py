@@ -23,6 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-t)6$n2)+!gl8iij7r1_2_@97^95m5l25lx(!(7+!lh!phl(@i4'
 
+LOGIN_REDIRECT_URL = '/catalogo'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

@@ -25,6 +25,9 @@ class Cliente(models.Model):
     telefone = models.CharField(max_length=20)
     email = models.EmailField()
 
+    def __str__(self):
+        return self.nome
+
 
 class EnderecoEntrega(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)

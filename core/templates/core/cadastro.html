@@ -1,7 +1,6 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +9,14 @@
     <link rel="shortcut icon" href="{% static 'assets/logo.png' %}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title> Catalogo de Pizzas</title>
+    <title>Cadatro de Cliente</title>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/"> <img class="logo" src="{% static 'assets/logo.png' %}"> </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,48 +31,25 @@
                     <a class="nav-link active" aria-current="page" href="/login/">Login</a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
 <main>
-
-    <!-- pizza tradicionais -->
     <div class="top">
-        <h2>Pizzas Tradicionais </h2>
+        <h2>Cadastro de Clientes</h2>
     </div>
     <div class="container-fluid">
-        <!-- CARD 1 -->
-        {% for pizza in pizzas %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'assets/catalogo/1Americana.jpg' %}" alt="Card image cap">
-
-                <div class="card-body">
-                    <h5 class="card-title">{{ pizza.nome }}</h5>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <a href="#" class="card-link"> <strong>P</strong> R$24,99 </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" class="card-link"> <strong>{{ pizza.tipo }}</strong> {{ pizza.preco }} </a>
-                    </li>
-
-                </ul>
-
-                <div class="card-body">
-                    <!-- <a href="#" class="card-link">Add ao Carrinho</a> -->
-
-                </div>
-            </div>
-        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a type="button" href="/login/" class="btn btn-primary">Login</a>
+        </form>
+    </div>
 </main>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 <script src="{% static 'script.js' %}"></script>
 </body>
-
 </html>
