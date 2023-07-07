@@ -1,11 +1,147 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Pizzaria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POO Pizzaria Delivery</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <!-- Icon -->
+  <link rel="icon" href="img/Pizza-icon.png">
 </head>
+
 <body>
 
+  <!-- Navbar -->
+  <div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+      <a href="#" class="w3-bar-item w3-button">HOME</a>
+      <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+      <a href="#about" class="w3-bar-item w3-button">SOBRE</a>
+      <a href="#contato" class="w3-bar-item w3-button">CONTATO</a>
+    </div>
+  </div>
+  <!-- Image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-padding">
+      <span class="w3-tag w3-xlarge">Atendemos de Quinta à Segunda das 16h às 00h</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white w3-hide-small pizza-small">POO
+        <br>Pizzaria Delivery</span>
+      <span class="w3-text-white w3-hide-large w3-hide-medium pizza-large">
+        <b>Valenttina's
+          <br>Pizzaria Delivery</b>
+      </span>
+      <p>
+        <a href="#menu" class="w3-button w3-xxlarge w3-black">Ir para o menu</a>
+      </p>
+    </div>
+  </header>
+  <div class="w3-container w3-padding-64 w3-red  w3-xlarge" id="about">
+    <div class="w3-content info-about">
+      <h1 class="w3-center w3-jumbo sobre">Sobre</h1>
+      <p>Desde 2014, Trabalhando com qualidade, pensando sempre na satisfação dos nossos clientes amigos, Seguindo a Tradição
+        como a melhor Pizzaria na COHAB I, Localizada na rua Dom Expedito Lopes, 37 - COHAB I, fazendo parte do coração desse
+        bairro incrível. Ótima escolha para quem almeja estar em um ambiente tradicional e familiar, saboreando deliciosas
+        pizzas e também degustando nossos selecionados vinhos. Venham conhecer o melhor balcão de Pizzas de Palmares, é sempre
+        um prazer receber à todos aqui na Pizzaria Delivery.</p>
+      <br>
+      <h1 class="horario">Horário de funcionamento</h1>
+      <div class="w3-row">
+        <div class="w3-col s6">
+          <p>Terça-feira 16:00 às 00:00</p>
+          <p>Quarta-feira 16:00 às 00:00</p>
+          <p>Quinta-feira 16:00 às 00:00</p>
+        </div>
+        <div class="w3-col s6">
+          <p>Sexta-feira 16:00 às 00:00</p>
+          <p>Sabádo 16:00 às 00:00</p>
+          <p>Domingo 16:00 às 00:00</p>
+          <p>Segunda Fechado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contato -->
+  <div class="w3-container w3-padding-64 w3-grey  w3-xlarge" id="contato">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo contato">Contato</h1>
+      <p class="w3-xxlarge">Ligue-nos para:</p>
+      <p class="num">81 9 8439-5283</p>
+      <p class="num">81 9 9852-5272</p>
+      <p class="num">81 9 8988-9530</p>
+      <p class="w3-xxlarge">Entre em contato</p>
+      <form action="/action_page.php" target="_blank">
+        <p>
+          <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nome" required name="Name">
+        </p>
+        <p>
+          <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Email" required name="People">
+        </p>
+        <p>
+          <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensagem" required name="Message">
+        </p>
+        <p>
+          <button class="w3-button w3-black w3-block" type="submit">Enviar Mensagem</button>
+        </p>
+      </form>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+    <p>&copy; POO 2023 Pizzaria Delivery</p>
+  </footer>
+  <!-- JS -->
+  <script src="js/main.js"></script>
 </body>
+
 </html>
+
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Amatic SC", cursive; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "Amatic SC", cursive; }
+
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90%; }
+  .bgimg .pizza-small {
+    font-size: 100px;
+    color: #dfdfdf !important;
+    text-shadow: 0 0 5px #000;
+    font-weight: 300; }
+  .bgimg .pizza-large {
+    font-size: 60px; }
+
+
+#about .info-about .about {
+  margin-bottom: 64px; }
+
+#about .info-about .text-size {
+  font-size: 1.5em; }
+
+#contato .contato {
+  margin-bottom: 64px; }
+  #contato .contato .num {
+    font-size: 1.2em;
+    margin-left: 8%; }
+</style>

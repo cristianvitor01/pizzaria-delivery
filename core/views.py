@@ -7,8 +7,7 @@ from .forms import LoginForm
 
 
 def index(request):
-    """Teste"""
-    return HttpResponse("Pizzaria.")
+    return render(request, 'core/index.html')
 
 
 def catalogo(request):

@@ -18,6 +18,9 @@ class Pizza(models.Model):
     ingredientes = models.TextField()
     preco = models.DecimalField(max_digits=6, decimal_places=2)
 
+    def __str__(self):
+        return self.nome
+
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=100)
@@ -34,6 +37,7 @@ class EnderecoEntrega(models.Model):
     endereco = models.CharField(max_length=200)
 
 
+
 class Pedido(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     endereco_entrega = models.ForeignKey(EnderecoEntrega, on_delete=models.CASCADE)
@@ -41,11 +45,13 @@ class Pedido(models.Model):
     valor_total = models.DecimalField(max_digits=8, decimal_places=2)
 
 
+
 class Item(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     ingrediente_adicional = models.TextField()
     preco_item = models.DecimalField(max_digits=6, decimal_places=2)
+
 
 
 class Pagamento(models.Model):
