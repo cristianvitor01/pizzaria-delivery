@@ -39,7 +39,7 @@ class PagamentoAdmin(admin.ModelAdmin):
 
 @admin.register(PedidoStatus)
 class PedidoStatusAdmin(admin.ModelAdmin):
-    list_display = ['id', 'pedido', 'status_atual', 'tempo_de_entrega']
+    list_display = ['id', 'pedido', 'status_atual']
 
 
 @admin.register(Entrega)
