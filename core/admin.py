@@ -21,20 +21,20 @@ class EnderecoEntregaAdmin(admin.ModelAdmin):
 
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'cliente', 'endereco_entrega', 'data_pedido', 'valor_total']
+    list_display = ['id', 'numero', 'cliente', 'endereco_entrega', 'data_pedido', 'valor_total']
     list_filter = ['data_pedido']
     date_hierarchy = 'data_pedido'
 
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ['id', 'pedido', 'pizza', 'ingrediente_adicional', 'preco_item']
+    list_display = ['id', 'item_nome', 'pedido', 'pizza', 'preco_item']
     list_filter = ['pizza']
 
 
 @admin.register(Pagamento)
 class PagamentoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'pedido', 'total_pagamento', 'metodo_pagamento']
+    list_display = ['id', 'pedido', 'valor_total', 'metodo_pagamento']
 
 
 @admin.register(PedidoStatus)
@@ -44,7 +44,7 @@ class PedidoStatusAdmin(admin.ModelAdmin):
 
 @admin.register(Entrega)
 class EntregaAdmin(admin.ModelAdmin):
-    list_display = ['id', 'pedido', 'entrega_status']
+    list_display = ['id', 'pedido', 'entrega_status', 'tempo_de_entrega']
 
 
 @admin.register(FeedBack)

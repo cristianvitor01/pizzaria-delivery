@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Pizza(models.Model):
@@ -36,14 +37,20 @@ class EnderecoEntrega(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     endereco = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.endereco
+
 
 class Pedido(models.Model):
-    numero = models.IntegerField()
+    numero = models.IntegerField(max_length=4, default='0001')
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     endereco_entrega = models.ForeignKey(EnderecoEntrega, on_delete=models.CASCADE)
     data_pedido = models.DateTimeField(auto_now_add=True)
     valor_total = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return self.numero.__str__()
 
 
 class Item(models.Model):
@@ -81,7 +88,7 @@ class PedidoStatus(models.Model):
 class Entrega(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     entrega_status = models.CharField(max_length=20)
-    tempo_de_entrega = models.DateTimeField()
+    tempo_de_entrega = models.DateTimeField(default=timezone.now)
 
 
 class FeedBack(models.Model):
