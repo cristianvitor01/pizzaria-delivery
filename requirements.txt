@@ -2,7 +2,6 @@ asgiref==3.7.2
 attrs==22.1.0
 build==0.10.0
 CacheControl==0.12.11
-certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
 cleo==2.0.1
